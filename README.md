@@ -33,3 +33,5 @@ Add /src/db.ts following the guideline:
 https://www.prisma.io/docs/guides/other/troubleshooting-orm/help-articles/nextjs-prisma-client-dev-practices
 
 
+Cleanup `globals.css` and page.tsx
+
