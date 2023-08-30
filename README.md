@@ -11,4 +11,25 @@ This project was inited with:
 npx create-next-app@latest .
 ```
 
+Selected all we wanted: Typescript, tailwind, src, eslint, and all defaults.
+
+
+Prisma as our ORM:
+```
+npm i prisma --save-dev
+npx prisma init --datasource-provider sqlite
+```
+
+Add .env  and .db* to .gitignore.
+
+Add model to `schema.prisma`.
+
+Migrate:
+```
+npx prisma migrate dev --name init
+```
+
+Add /src/db.ts following the guideline:
+https://www.prisma.io/docs/guides/other/troubleshooting-orm/help-articles/nextjs-prisma-client-dev-practices
+
 
