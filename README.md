@@ -46,3 +46,21 @@ We changed /page.tsx to add a Link and then you see that the link
 occus on the client after first loaded. No requests to server.
 
 
+Add todos from prisma client and we see it querying on the server side.
+(As long as we don't have any useEffect, useState, or onChange, it runs on the server).
+
+We can add some data with something like:
+```ts
+  await prisma.todo.create({
+    data: {
+      title: "hello there!",
+      complete: false,
+    },
+  });
+```
+
+We can see than data being written on the source-code of the page.
+(Not on Network, we'll see why...)
+
+
+
