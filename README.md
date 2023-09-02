@@ -5,7 +5,7 @@ This repo contains the project already done, to follow how it was
 implemented use the "Guide" and navigate the git commit history.
 
 
-# Guide
+### Guide
 This project was inited with:
 ```
 npx create-next-app@latest .
@@ -13,6 +13,7 @@ npx create-next-app@latest .
 
 Selected all we wanted: Typescript, tailwind, src, eslint, and all defaults.
 
+----
 
 Prisma as our ORM:
 ```
@@ -29,12 +30,18 @@ Migrate:
 npx prisma migrate dev --name init
 ```
 
+----
+
+Optionally query the DB with some external tool
+
+----
+
 Add /src/db.ts following the guideline:
 https://www.prisma.io/docs/guides/other/troubleshooting-orm/help-articles/nextjs-prisma-client-dev-practices
 
+----
 
 Cleanup `globals.css` and page.tsx
-
 
 Editing `layouts.tsx`.
 
@@ -65,6 +72,7 @@ We can see than data being written on the source-code of the page.
 
 Some rework of separating the fetch on a separated funcion would be nice.
 
+----
 
 Create the TodoItem.tsx inside a components/ folder. Make everything look
 ok and "work". See it on the browser, take a note as the "checked" prop is
@@ -123,3 +131,27 @@ Everything is done by the server what makes the client run cleaner.
 
 ----
 
+Now we want to syncrhonize the state of our Todo Items.
+
+Inside TodoItem.tsx we complete the defaultChecked and after the
+onChange event pointing to a new function toggleTodo. We will pass
+this trought a prop so we need to type it also.
+
+Inside the main page add <... toggleTodo={toggleTodo}> and create a
+simple toggleTodo skel function with "use server" no more typescript
+errors but an error on nextjs. It will complain <TodoItem> must be
+rendered on the server because we used an event on Change.
+
+We can than console.log id and complete on toggle and see this working.
+
+Note: we cannot redirect nothing on this function, since its called
+from a client component. It will issue an error.
+
+
+Finally we make an "update" to the DB.
+
+DONE.
+
+### Homework
+
+Make an button that deletes the task.
