@@ -42,4 +42,7 @@ Create new route by adding a folder with route name and a page.tsx inside it.
 (Ex.: new/page/tsx)
 
 
+We changed /page.tsx to add a Link and then you see that the link
+occus on the client after first loaded. No requests to server.
+
 
