@@ -108,9 +108,18 @@ Restart the server.
 
 On the form where usually action="/new" we will pass action={createTodo}.
 
-Now we can test it on browser and see nothing on console. On network our POST
-is now being sent.
+Now we can test it on browser and see nothing on console. On network
+our POST is now being sent.
 
 On server console, the log occurs!
 
 ---- 
+
+
+Now we complete the createTodo function to get data from the form,
+validate it and save to the database.
+
+Everything is done by the server what makes the client run cleaner.
+
+----
+
