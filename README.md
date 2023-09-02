@@ -38,4 +38,8 @@ Cleanup `globals.css` and page.tsx
 
 Editing `layouts.tsx`.
 
+Create new route by adding a folder with route name and a page.tsx inside it.
+(Ex.: new/page/tsx)
+
+
 
