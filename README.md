@@ -35,3 +35,7 @@ https://www.prisma.io/docs/guides/other/troubleshooting-orm/help-articles/nextjs
 
 Cleanup `globals.css` and page.tsx
 
+
+Editing `layouts.tsx`.
+
+
