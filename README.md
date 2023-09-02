@@ -66,4 +66,10 @@ We can see than data being written on the source-code of the page.
 Some rework of separating the fetch on a separated funcion would be nice.
 
 
+Create the TodoItem.tsx inside a components/ folder. Make everything look
+ok and "work". See it on the browser, take a note as the "checked" prop is
+not really persistent by refreshing the browser.
 
+
+We will first make the "New" form work an then come back to see how to make
+this work.
