@@ -80,3 +80,37 @@ to make it look ok. By the end whe can try to send the form but no
 action will be done by the server since we haven't hooked this up to 
 any kind of server action.
 
+---- 
+
+We now try to create a function inside new/page.tsx to handle the form.
+Just for testing if this is an server action.
+
+```ts
+const createTodo = async (data: FormData) => {
+  "use server";
+
+  console.log("WHERE AM I?");
+};
+```
+
+Saving it and running will make NextJS complain it is experimental.
+
+We need to fix it on  next.config.js with:
+```js
+const nextConfig = {
+  experimental: {
+    serverActions: true,
+  },
+};
+```
+
+Restart the server.
+
+On the form where usually action="/new" we will pass action={createTodo}.
+
+Now we can test it on browser and see nothing on console. On network our POST
+is now being sent.
+
+On server console, the log occurs!
+
+---- 

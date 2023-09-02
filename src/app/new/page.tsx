@@ -1,12 +1,18 @@
 import Link from "next/link";
 
+const createTodo = async (data: FormData) => {
+  "use server";
+
+  console.log("WHERE AM I?");
+};
+
 const Page = () => {
   return (
     <>
       <header className="flex justify-between mb-4 items-center">
-        <h1 className="text-2xl">TODOs</h1>
+        <h1 className="text-2xl">New</h1>
       </header>
-      <form className="flex gap-2 flex-col">
+      <form action={createTodo} className="flex gap-2 flex-col">
         <input
           type="text"
           name="title"
