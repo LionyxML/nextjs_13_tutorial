@@ -73,3 +73,10 @@ not really persistent by refreshing the browser.
 
 We will first make the "New" form work an then come back to see how to make
 this work.
+
+
+Now we improve our new/page.tsx creating the form and defining classes
+to make it look ok. By the end whe can try to send the form but no 
+action will be done by the server since we haven't hooked this up to 
+any kind of server action.
+
