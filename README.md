@@ -63,4 +63,7 @@ We can see than data being written on the source-code of the page.
 (Not on Network, we'll see why...)
 
 
+Some rework of separating the fetch on a separated funcion would be nice.
+
+
 
