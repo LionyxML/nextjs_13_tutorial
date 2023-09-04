@@ -11,7 +11,8 @@ This project was inited with:
 npx create-next-app@latest .
 ```
 
-Selected all we wanted: Typescript, tailwind, src, eslint, and all defaults.
+Selected all we wanted: Typescript, tailwind, src, eslint, and all
+defaults.
 
 ----
 
@@ -45,16 +46,17 @@ Cleanup `globals.css` and page.tsx
 
 Editing `layouts.tsx`.
 
-Create new route by adding a folder with route name and a page.tsx inside it.
-(Ex.: new/page/tsx)
+Create new route by adding a folder with route name and a page.tsx
+inside it.  (Ex.: new/page/tsx)
 
 
 We changed /page.tsx to add a Link and then you see that the link
-occus on the client after first loaded. No requests to server.
+occurs on the client after first loaded. No requests to server.
 
 
-Add todos from prisma client and we see it querying on the server side.
-(As long as we don't have any useEffect, useState, or onChange, it runs on the server).
+Add todos from prisma client and we see it querying on the server
+side.  (As long as we don't have any useEffect, useState, or onChange,
+it runs on the server).
 
 We can add some data with something like:
 ```ts
@@ -114,7 +116,8 @@ const nextConfig = {
 
 Restart the server.
 
-On the form where usually action="/new" we will pass action={createTodo}.
+On the form where usually action="/new" we will pass
+action={createTodo}.
 
 Now we can test it on browser and see nothing on console. On network
 our POST is now being sent.
