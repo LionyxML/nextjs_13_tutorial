@@ -5,7 +5,35 @@ This repo contains the project already done, to follow how it was
 implemented use the "Guide" and navigate the git commit history.
 
 
-### Guide
+### Installing and Running
+Clone this repo.
+
+Run npm install: 
+```bash
+npm install
+```
+
+Create on project root folder a `.env` file with:
+```bash
+DATABASE_URL="file:./dev.db"
+```
+
+Create the prisma client and run migrations:
+
+```bash
+npx prisma generate
+npx prisma migrate dev
+```
+
+Start the server:
+```bash
+npm run dev
+```
+
+Access the app via the given URL.
+
+
+### Study Guide
 This project was inited with:
 ```
 npx create-next-app@latest .
