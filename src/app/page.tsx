@@ -1,7 +1,8 @@
 import TodoItem from "@/components/TodoItem";
 import prisma from "@/db";
-import { revalidatePath } from "next/cache";
+// import { revalidatePath } from "next/cache";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const getTodos = () => prisma.todo.findMany();
 
@@ -26,7 +27,7 @@ const deleteTodo = async (id: string) => {
   });
 
   // redirect("/") // won't work because of caching
-  revalidatePath("/");
+  // revalidatePath("/");
 };
 
 export default async function Home() {

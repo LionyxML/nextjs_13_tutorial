@@ -1,4 +1,5 @@
 "use client";
+import { useRouter } from "next/navigation";
 
 type TodoItemProps = {
   id: string;
@@ -15,6 +16,13 @@ const TodoItem = ({
   toggleTodo,
   deleteTodo,
 }: TodoItemProps) => {
+  const router = useRouter();
+
+  const onClickDelete = () => {
+    deleteTodo(id);
+    router.refresh();
+  };
+
   return (
     <li className="flex gap-1 items-center">
       <input
@@ -31,7 +39,7 @@ const TodoItem = ({
       >
         {title}
       </label>
-      <button onClick={() => deleteTodo(id)}>
+      <button onClick={onClickDelete}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
