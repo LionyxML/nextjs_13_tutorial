@@ -15,10 +15,15 @@ Run npm install:
 npm install
 ```
 
+Start the Postgres container with:
+```bash
+docker-compose -f docker-compose-dev-yml up
+```
+
 Create on project root folder a `.env` file with:
 
 ```bash
-DATABASE_URL="file:./dev.db"
+DATABASE_URL="postgresql://root:root@localhost:5432/test_db"
 ```
 
 Create the prisma client and run migrations:
@@ -35,6 +40,10 @@ npm run dev
 ```
 
 Access the app via the given URL.
+
+Extras:
+- http://localhost:5050 runs pgAdmin (user: admin@admin.com / pass: root)
+- `npx prisma studio` starts the prisma studio interface
 
 ### Study Guide
 
