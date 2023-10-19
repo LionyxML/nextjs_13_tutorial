@@ -197,3 +197,5 @@ DONE.
 ### Homework
 
 Make an button that deletes the task.
+
+Branch: `feat/homework-task-deletion` contains a possible solution.
