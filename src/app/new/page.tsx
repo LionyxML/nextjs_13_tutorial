@@ -28,6 +28,7 @@ const Page = () => {
           name="title"
           className="border border-slate-300 bg-transparent rounded px-2
           py-1 outline-mode focus-within:border-slate-100"
+          autoFocus
         />
         <div className="flex gap-2 justify-end">
           <Link

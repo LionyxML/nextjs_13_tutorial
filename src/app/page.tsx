@@ -1,6 +1,8 @@
 import TodoItem from "@/components/TodoItem";
 import prisma from "@/db";
+// import { revalidatePath } from "next/cache";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const getTodos = () => prisma.todo.findMany();
 
@@ -13,6 +15,19 @@ const toggleTodo = async (id: string, complete: boolean) => {
     },
     data: { complete },
   });
+};
+
+const deleteTodo = async (id: string) => {
+  "use server";
+
+  await prisma.todo.delete({
+    where: {
+      id,
+    },
+  });
+
+  // redirect("/") // won't work because of caching
+  // revalidatePath("/");
 };
 
 export default async function Home() {
@@ -33,7 +48,12 @@ export default async function Home() {
       </header>
       <ul className="pl-4">
         {todos.map((todo) => (
-          <TodoItem key={todo.id} toggleTodo={toggleTodo} {...todo} />
+          <TodoItem
+            key={todo.id}
+            toggleTodo={toggleTodo}
+            deleteTodo={deleteTodo}
+            {...todo}
+          />
         ))}
       </ul>
     </>
